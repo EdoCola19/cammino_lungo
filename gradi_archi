@@ -5,3 +5,7 @@ grafo.in_degree() num archi entranti
 archi_ordinati = sorted(grafo.edges(data=True), key=lambda x: x[2]["weight"], reverse=True)
 for u, v, d in archi_ordinati:
     print(f"{u} - {v}: {d['weight']}")
+
+
+PER I VICINI:
+list(grafo.neighbors(nodo)) per i vicini di un nodo
