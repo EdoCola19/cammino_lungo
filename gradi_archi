@@ -9,3 +9,11 @@ for u, v, d in archi_ordinati:
 
 PER I VICINI:
 list(grafo.neighbors(nodo)) per i vicini di un nodo
+
+
+G = nx.DiGraph()
+# Trova i nodi con in_degree == 0
+nodi_zero_entranti = [n for n in G.nodes if G.in_degree(n) == 0]
+
+# Trova quello con massimo out_degree tra questi
+nodo_target = max(nodi_zero_entranti, key=lambda n: G.out_degree(n), default=None)
